@@ -19,6 +19,19 @@
       "producer": "new-app@e249350",
       "class": "canonical",
       "at": "2026-11-10T00:33:44Z"
+    },
+    "VERSION": {
+      "sha": "7dea76edb3dc51b6e5e8223e9f941a35c1e364d6",
+      "producer": "app-builder/.github/workflows/build.yml version job",
+      "class": "generated",
+      "at": "2026-11-10T00:36:31Z"
+    },
+    "CHANGELOG.md": {
+      "sha": "beb8b07855df2e93da82fd6e71afc150b16caf11",
+      "producer": "app-builder/.github/workflows/build.yml version job",
+      "class": "generated",
+      "at": "2026-11-10T00:36:31Z"
     }
-  }
+  },
+  "updated": "2026-11-10T00:36:31Z"
 }
