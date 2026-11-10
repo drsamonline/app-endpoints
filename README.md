@@ -1,5 +1,11 @@
 # app-endpoints
 
+<!-- shot:start -->
+
+![Screenshot](docs/shot.png)
+
+<!-- shot:end -->
+
 [![live](https://img.shields.io/badge/live-online-22c55e)](https://drsamonline.github.io/app-endpoints/)
 [![download](https://img.shields.io/github/v/release/drsamonline/app-endpoints?label=download&color=blue)](https://github.com/drsamonline/app-endpoints/releases/latest)
 [![tests](https://img.shields.io/badge/tests-101%20assertions-3f7a52)](test-node.js)
