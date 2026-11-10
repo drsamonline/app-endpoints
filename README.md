@@ -23,7 +23,14 @@ you write a line — **does it need a key**, **can a browser call it at all** (C
 HTTPS** — and in most lists those are footnotes. Here they are filters. The filter is the product.
 
 The idea surfaced three times independently (the open-data survey, the learn-to-code survey, the
-productivity-tools survey) before it was built, which is the strongest signal the queue has.
+productivity-tools survey) before it was built, which is the strongest signal the queue has. It is
+**master list #134**; the first commit's message cites #154, which is wrong — this app was already on
+the list with a spec, and the backlog's P5 line for it was a duplicate.
+
+**What this is not.** The spec asked for a rate limit on every entry. The source does not state rate
+limits, so none are recorded — the app says "listed as free in public-apis" and links out rather than
+inventing one. There is no "try it" call, and no URL was checked for liveness: this is a directory,
+not a monitor. `QUEUE/app-endpoints.md` in forge records each of these as not built.
 
 ## What is here
 
