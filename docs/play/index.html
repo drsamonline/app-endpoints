@@ -1,0 +1,73 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Endpoints — find the right free API</title>
+<meta name="description" content="Find the right free API for a job — offline, filterable by auth, CORS and HTTPS. No account, no server, no tracking.">
+<style>
+  :root{--bg:#0f1115;--card:#171a21;--card2:#1d212a;--ink:#e7e9ee;--mut:#9aa3b2;--line:#252a34;--acc:#22c55e;--warn:#f59e0b;--bad:#ef4444}
+  @media (prefers-color-scheme: light){:root{--bg:#f7f8fa;--card:#fff;--card2:#f1f3f6;--ink:#161a20;--mut:#5b6472;--line:#e2e6ec}}
+  *{box-sizing:border-box}
+  body{margin:0;background:var(--bg);color:var(--ink);font:15px/1.55 system-ui,-apple-system,Segoe UI,Roboto,sans-serif}
+  a{color:var(--acc)}
+  header,main,footer{max-width:920px;margin:0 auto;padding:16px 18px}
+  h1{margin:0;font-size:20px;letter-spacing:-.01em}
+  h1 small{font-weight:400;color:var(--mut);font-size:13px;display:block;margin-top:2px}
+  .bar{display:flex;gap:8px;flex-wrap:wrap;align-items:center;margin:14px 0}
+  input[type=search],select{background:var(--card);color:var(--ink);border:1px solid var(--line);border-radius:10px;padding:9px 11px;font:inherit}
+  input[type=search]{flex:1;min-width:220px}
+  button{background:var(--card2);color:var(--ink);border:1px solid var(--line);border-radius:10px;padding:9px 12px;font:inherit;cursor:pointer}
+  button.primary{background:var(--acc);color:#06210f;border-color:transparent;font-weight:600}
+  button:disabled{opacity:.5;cursor:default}
+  .chip{display:inline-block;font-size:12px;padding:2px 8px;border-radius:999px;border:1px solid var(--line);background:var(--card2);color:var(--mut)}
+  .chip.none{color:#22c55e;border-color:#1e5b39}
+  .chip.apiKey{color:#60a5fa;border-color:#1e3a5f}
+  .chip.OAuth{color:#c084fc;border-color:#3b2a5f}
+  .chip.yes{color:#22c55e;border-color:#1e5b39}
+  .chip.no{color:#f59e0b;border-color:#5b3d1e}
+  .chip.unknown{color:var(--mut)}
+  .card{background:var(--card);border:1px solid var(--line);border-radius:12px;padding:12px 14px;margin:8px 0}
+  .card h3{margin:0 0 2px;font-size:15px}
+  .card p{margin:4px 0;color:var(--mut);font-size:13.5px}
+  .row{display:flex;gap:6px;flex-wrap:wrap;align-items:center}
+  .mut{color:var(--mut)}.small{font-size:12.5px}
+  #status{margin:10px 0;font-size:13.5px;color:var(--mut);min-height:20px}
+  #status.warn{color:var(--warn)}
+  #status.bad{color:var(--bad)}
+  footer{color:var(--mut);font-size:12.5px}
+  .spacer{flex:1}
+</style>
+</head>
+<body>
+<header>
+  <h1>Endpoints <small>Find the right free API for a job. The whole directory is in this page — no request, no account.</small></h1>
+  <div class="bar">
+    <input id="q" type="search" placeholder="weather, currency, cat facts…" autocomplete="off" aria-label="Search the directory">
+    <button id="nokey" class="primary" title="No key needed and callable from a browser">No key + CORS</button>
+    <button id="reset">Reset</button>
+  </div>
+  <div class="bar">
+    <select id="auth" aria-label="Auth"><option value="">Any auth</option></select>
+    <select id="cors" aria-label="CORS"><option value="">Any CORS</option></select>
+    <select id="https" aria-label="HTTPS"><option value="">HTTP or HTTPS</option></select>
+    <select id="cat" aria-label="Category"><option value="">Any category</option></select>
+    <span class="spacer"></span>
+    <button id="pins" title="Show only pinned entries">Pinned (<span id="pincount">0</span>)</button>
+    <button id="exp">Export</button>
+  </div>
+  <div id="status" role="status" aria-live="polite"></div>
+</header>
+<main id="out"></main>
+<footer>
+  <p id="prov"></p>
+  <p>Endpoints is a directory, not a monitor: it reports what the source said on the date it was
+  fetched, and never claims an API is up, fast, or still free today. It never asks for a key.</p>
+</footer>
+<script src="search-kit.js"></script>
+<script src="export-kit.js"></script>
+<script src="data.js"></script>
+<script src="endpoints.js"></script>
+<script src="app.js"></script>
+</body>
+</html>

@@ -1,0 +1,77 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Endpoints — find the right free API for a job</title>
+<meta name="description" content="Endpoints is an offline directory of 2,214 public APIs you can filter by auth, CORS and HTTPS — the three things that decide whether an API is usable in a browser.">
+<style>
+  :root{--bg:#0f1115;--card:#171a21;--ink:#e7e9ee;--mut:#9aa3b2;--line:#252a34;--acc:#22c55e}
+  @media (prefers-color-scheme: light){:root{--bg:#f7f8fa;--card:#fff;--ink:#161a20;--mut:#5b6472;--line:#e2e6ec}}
+  *{box-sizing:border-box}
+  body{margin:0;background:var(--bg);color:var(--ink);font:16px/1.6 system-ui,-apple-system,Segoe UI,Roboto,sans-serif}
+  header,main,footer{max-width:720px;margin:0 auto;padding:22px 20px}
+  h1{font-size:26px;margin:0 0 6px;letter-spacing:-.02em}
+  h2{font-size:16px;margin:26px 0 6px}
+  p{margin:8px 0}
+  .mut{color:var(--mut)}
+  a{color:var(--acc)}
+  .cta{display:inline-block;background:var(--acc);color:#06210f;font-weight:700;padding:11px 18px;border-radius:11px;text-decoration:none;margin:14px 0}
+  .card{background:var(--card);border:1px solid var(--line);border-radius:12px;padding:14px 16px;margin:12px 0}
+  code{background:var(--card);border:1px solid var(--line);border-radius:6px;padding:1px 5px;font-size:13.5px}
+  table{border-collapse:collapse;width:100%;font-size:14px}
+  td,th{border-bottom:1px solid var(--line);padding:6px 4px;text-align:left}
+  footer{color:var(--mut);font-size:13px}
+</style>
+</head>
+<body>
+<header>
+  <h1>Endpoints</h1>
+  <p class="mut">Find the right free API for a job — offline, with the CORS and auth answers a directory usually makes you guess.</p>
+  <a class="cta" href="play/">Open the directory →</a>
+</header>
+<main>
+  <div class="card">
+    <p><strong>2,214 public APIs</strong> · 51 categories · <strong>1,103 need no key</strong> ·
+    <strong>943 allow CORS</strong> · fetched 2026-11-10 from public-apis (MIT).</p>
+    <p class="mut">Every entry is a row in a file that ships with the page. Nothing is fetched at
+    runtime, so the app works with the network cut.</p>
+  </div>
+
+  <h2>Why it exists</h2>
+  <p>Every API directory is a list you read. But three questions decide whether an API is usable
+  before you have written a line: <strong>does it need a key</strong>, <strong>can a browser call
+  it at all</strong> (CORS), and <strong>is it HTTPS</strong>. Those are footnotes in most lists and
+  filters here — and the filter is the product.</p>
+
+  <h2>What it refuses to be</h2>
+  <table>
+    <tr><th>Not</th><th>Because</th></tr>
+    <tr><td>a monitor</td><td>it never claims an API is up, fast, or still free today — it reports the source and the date it was fetched</td></tr>
+    <tr><td>a spec browser</td><td>it ships the directory, not 766 MB of OpenAPI definitions; it links to the documentation</td></tr>
+    <tr><td>a key store</td><td>it never asks for, holds or sends an API key</td></tr>
+    <tr><td>a network client</td><td>there is no <code>fetch</code> in it — the directory is in the page</td></tr>
+  </table>
+
+  <h2>When it goes wrong</h2>
+  <p>A filter it does not know is <strong>refused with the vocabulary it accepts</strong> rather than
+  returned as an empty list — "nothing matches" and "you typed it wrong" are different answers, and
+  the app can tell them apart. A pin that cannot be written says it was not kept. A corrupt pin file
+  is reported with an excerpt and a reset, never shown as "you have no pins".</p>
+
+  <h2>Take it with you</h2>
+  <p>Single file, no build step, no CDN, no account. Download the page folder and open
+  <code>index.html</code> from disk — or grab the Windows EXE / Android APK from the
+  <a href="https://github.com/drsamonline/app-endpoints/releases/latest">latest release</a>.</p>
+
+  <h2>Where the data comes from</h2>
+  <p>the <a href="https://github.com/public-apis/public-apis">public-apis</a> README table,
+  <strong>MIT</strong>, fetched 2026-11-10. The curation (one row per name and host, auth and CORS
+  normalised, advertising cells dropped rather than guessed at) is recorded in
+  <a href="https://github.com/drsamonline/app-endpoints/blob/main/data/SOURCE.md">data/SOURCE.md</a>.</p>
+</main>
+<footer>
+  <p>PolyForm Noncommercial 1.0.0 · © 2026 Dr Sohil Momin · no telemetry, no trackers, no cookies.</p>
+</footer>
+</body>
+</html>

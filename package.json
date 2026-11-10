@@ -1,0 +1,12 @@
+{
+  "name": "app-endpoints",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Endpoints — find the right free API for a job: an offline directory filterable by auth, CORS and HTTPS.",
+  "scripts": {
+    "test": "node test-node.js",
+    "data": "python3 tools/build-data.py"
+  },
+  "dependencies": {},
+  "license": "SEE LICENSE IN LICENSE"
+}

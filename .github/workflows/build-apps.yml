@@ -1,0 +1,38 @@
+# Build + release + deploy. One push, one pipeline, all from the same commit.
+#
+# The whole pipeline lives in the public app-builder kit, so a fix there reaches
+# every app at once. Do not inline it here again.
+#
+# The pin is the fleet's single target (forge/canonical-pins.json). The caller
+# MUST grant the permissions: a reusable workflow cannot raise its own above the
+# caller's, and a caller that omits them fails at STARTUP with no job at all -
+# which is exactly what every scaffold did from 2026-11-07 until this was fixed.
+name: Build + deploy
+
+on:
+  push:
+    branches: [ main ]
+  pull_request:
+    branches: [ main ]
+  workflow_dispatch:
+
+permissions:
+  contents: write
+  pages: write
+  id-token: write
+
+concurrency:
+  group: build
+  cancel-in-progress: true
+
+jobs:
+  app:
+    uses: drsamonline/app-builder/.github/workflows/build.yml@bbef0db943e11f1a280ac8a063b79e66b7f6d9db
+    with:
+      app_name: app-endpoints
+      app_src: docs/play
+      deploy_path: docs
+    permissions:
+      contents: write
+      pages: write
+      id-token: write
